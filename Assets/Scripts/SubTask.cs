@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SubTask{
-    public SubTask(string description, int subTaskCount = 1, int completedSubTaskCount = 0)
+    public SubTask(string description, int subTaskCount = 1)
     {
         this.description = description;
         this.subTaskCount = subTaskCount;
-        this.completedSubTaskCount = completedSubTaskCount;
+        this.completedSubTaskCount = 0;
     }
     /// <summary>
     /// Description of the subtask
