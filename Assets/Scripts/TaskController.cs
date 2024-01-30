@@ -7,13 +7,32 @@ using UnityEngine;
 
 public class TaskController : MonoBehaviour
 {
+    private static TaskController instance;
+    public static TaskController Instance{
+        get{
+            if (instance == null){
+                instance = FindObjectOfType<TaskController>();
+            }
+            return instance;
+        }
+    }
+    void Awake(){
+        if (instance == null){
+            instance = this;
+        }
+        else if (instance != this){
+            Destroy(gameObject);
+        }
+    }
+
+
     [SerializeField] Canvas canvas;
     [SerializeField] GameObject TaskText;
     [SerializeField] int session;
     [SerializeField] List<Task> tasks = new List<Task>();
     List<TextMeshProUGUI> taskTexts = new List<TextMeshProUGUI>();
     int currentTaskIndex;
-    // Start is called before the first frame update
+    public Task currentTask => tasks[currentTaskIndex];
     void Start()
     {
         if(File.Exists(Application.persistentDataPath + "/session.txt"))
@@ -33,7 +52,6 @@ public class TaskController : MonoBehaviour
     void Update()
     {
         if (currentTaskIndex >= tasks.Count) return;
-        Debug.Log(currentTaskIndex);
         if (tasks[currentTaskIndex].WasUpdated)
         {
             for (int i = 0; i < taskTexts.Count; i++){
@@ -62,7 +80,6 @@ public class TaskController : MonoBehaviour
         }
         taskTexts.Clear();
         tasks[currentTaskIndex].SetupTask();
-        Debug.Log(tasks[currentTaskIndex].GetTaskList.Count);
         for (int i = 0; i < tasks[currentTaskIndex].GetTaskList.Count; i++){
             SubTask task = tasks[currentTaskIndex].GetTaskList[i];
             GameObject taskTextObject = Instantiate(TaskText);
@@ -72,5 +89,6 @@ public class TaskController : MonoBehaviour
             taskText.text = task.ToString();
             taskTexts.Add(taskText);
         }
+        FPSController.Player.transform.position = tasks[currentTaskIndex].spawnPoint.position;
     }
 }

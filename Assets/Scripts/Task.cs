@@ -8,7 +8,7 @@ public abstract class Task : MonoBehaviour
     /// <summary>
     /// Spawn point where the task will spawn the player on start
     /// </summary>
-    [SerializeField] GameObject SpawnPoint;
+    [SerializeField] GameObject SpawnPoint; public Transform spawnPoint => SpawnPoint.transform;
     /// <summary>
     /// List of subtasks that need to be completed
     /// </summary>

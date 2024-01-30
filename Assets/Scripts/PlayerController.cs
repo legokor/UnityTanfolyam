@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- 
+using UnityEngine.TextCore.Text;
+
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
@@ -14,7 +15,60 @@ public class FPSController : MonoBehaviour
  
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
- 
+    private static FPSController instance;
+    public static FPSController Player{
+        get{
+            if (instance == null){
+                instance = FindObjectOfType<FPSController>();
+            }
+            return instance;
+        }
+    }
+    void Awake(){
+        if (instance == null){
+            instance = this;
+        }
+        else if (instance != this){
+            Destroy(gameObject);
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            Debug.Log("Respawn");
+            this.GetComponent<CharacterController>().enabled = false;
+            var pos = TaskController.Instance.currentTask.spawnPoint.position;
+            Debug.Log("pos: " + pos);
+            transform.position = new Vector3(
+                pos.x,
+                pos.y,
+                pos.z
+            );
+            this.GetComponent<CharacterController>().enabled = true;
+        }
+        else {
+            Debug.Log("not trigger");
+        }
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            Debug.Log("Respawn");
+            var pos = TaskController.Instance.currentTask.spawnPoint.position;
+            Debug.Log("pos: " + pos);
+            transform.position = new Vector3(
+                pos.x,
+                pos.y,
+                pos.z
+            );
+        }
+        else {
+            Debug.Log("not trigger");
+        }
+    }
  
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
