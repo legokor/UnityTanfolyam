@@ -62,7 +62,8 @@ public class TaskController : MonoBehaviour
         if (tasks[currentTaskIndex].IsCompleted()){
             currentTaskIndex++;
             if (currentTaskIndex >= tasks.Count) return;
-            tasks[currentTaskIndex].SetupTask();
+            SetupCurrentTask();
+            Debug.Log(Application.persistentDataPath + "/session.txt");
             string[] sessionStrings = File.ReadAllText(Application.persistentDataPath + "/session.txt").Split(";");
             sessionStrings[session] = currentTaskIndex.ToString();
             File.WriteAllText(Application.persistentDataPath + "/session.txt", string.Join(";", sessionStrings));
@@ -89,6 +90,6 @@ public class TaskController : MonoBehaviour
             taskText.text = task.ToString();
             taskTexts.Add(taskText);
         }
-        FPSController.Player.transform.position = tasks[currentTaskIndex].spawnPoint.position;
+        FPSController.Player.GoTo(tasks[currentTaskIndex].spawnPoint.position);
     }
 }

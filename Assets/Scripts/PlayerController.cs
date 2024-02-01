@@ -6,7 +6,7 @@ using UnityEngine.TextCore.Text;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
-    public Camera playerCamera;
+    public Camera playerCamera; 
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
     public float jumpPower = 7f;
@@ -46,9 +46,6 @@ public class FPSController : MonoBehaviour
                 pos.z
             );
             this.GetComponent<CharacterController>().enabled = true;
-        }
-        else {
-            Debug.Log("not trigger");
         }
     }
 
@@ -129,5 +126,11 @@ public class FPSController : MonoBehaviour
         }
  
         #endregion
+    }
+
+    public void GoTo(Vector3 pos){
+        GetComponent<CharacterController>().enabled = false;
+        transform.position = pos;
+        GetComponent<CharacterController>().enabled = true;
     }
 }

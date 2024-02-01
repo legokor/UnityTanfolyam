@@ -20,6 +20,7 @@ public class SetRenderQueue : MonoBehaviour {
 	}
 
     void SetRenderOrder(GameObject g){
+        if (g.GetComponent<SetRenderQueue>() != null && g.GetComponent<SetRenderQueue>() != this) return;
         Renderer renderer = g.GetComponent<Renderer>();
         if (renderer != null){
             Material[] materials = renderer.materials;
