@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour {
 
         if (bulletInstance == null) return;
         bulletInstance.GetComponent<Bullet>().Shoot(ejection);
+        
     }
 
 

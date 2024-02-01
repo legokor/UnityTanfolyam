@@ -62,9 +62,6 @@ public class FPSController : MonoBehaviour
                 pos.z
             );
         }
-        else {
-            Debug.Log("not trigger");
-        }
     }
  
     Vector3 moveDirection = Vector3.zero;

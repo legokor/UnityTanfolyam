@@ -19,3 +19,18 @@
     - FixedUpdate: Minden fizikai szimulációs lépésben meghívódik, a szkript életciklusának elején
     - Mindegyik private void Függvény()!
 - Debug: Debug.Log() -> Információ, Debug.LogWarning() -> Figyelmeztetés, Debug.LogError() -> Hiba
+
+ ## 2. ALkalom
+ # Scene
+ - Scene: egy pálya
+ - Project fülben van tárolva, váltsunk át 2. Scene-re
+ # Player Controller:
+ - CharacterController: A játékost fizikai tulajdonságait adja meg, a mozgató scriptet segíti
+ - A játékos mozgatásához a Unity Input rendszerét használjuk
+    - A Unity Input rendszerében lehetőség van a billentyűk és gombok lekérdezésére -> Down, Up, Get
+ # Physics
+ - Rigidbody: fizikai szimulációban részt vevő objektumoknak kell
+    - Kinematic: Nem mozog, de a többi fizikai objektummal ütközhet
+    - Többi beállítás: ...
+ - Collider: Fizikai objektumok "láthatatlan" modellje, ezek alapján történik az ütközés érzékelése pl. két autó ütközése
+    - Trigger: Nem szilárd testek, hanem zónák/gázok/területek, amik érzékelik a bennük tartózkodó objektumokat (pl. checkpoint, amin áthaladt a player)
