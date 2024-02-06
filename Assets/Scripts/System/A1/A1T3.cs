@@ -26,7 +26,7 @@ public class A1T3 : Task
 
     public override void SetupTask()
     {
-        var w = Instantiate(weaponPrefab, FPSController.Player.playerCamera.transform);
+        var w = Instantiate(weaponPrefab, PlayerController.Player.playerCamera.transform);
         weapon = w.GetComponentInChildren<Weapon>();
         subTasks.Add(new SubTask("Hozz létre prefabot az asztalon található Lövedék-ből, és add át a Fegyver megfelelő változójának!"));
         subTasks.Add(new SubTask("Módosítsd a Fegyver osztályt, hogy a Loves függvény hozza létre a lövedéket, majd lődd le az 5 céltáblát!", 5));

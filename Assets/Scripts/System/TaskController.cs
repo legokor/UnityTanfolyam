@@ -55,6 +55,7 @@ public class TaskController : MonoBehaviour
         if (tasks[currentTaskIndex].WasUpdated)
         {
             for (int i = 0; i < taskTexts.Count; i++){
+                if (i >= tasks[currentTaskIndex].GetTaskList.Count) break;
                 taskTexts[i].text = tasks[currentTaskIndex].GetTaskList[i].ToString();
                 taskTexts[i].fontStyle = tasks[currentTaskIndex].GetTaskList[i].isCompleted ? FontStyles.Strikethrough : FontStyles.Normal;
             }
@@ -80,6 +81,7 @@ public class TaskController : MonoBehaviour
             Destroy(taskText.gameObject);
         }
         taskTexts.Clear();
+        if (currentTaskIndex >= tasks.Count) return;
         tasks[currentTaskIndex].SetupTask();
         for (int i = 0; i < tasks[currentTaskIndex].GetTaskList.Count; i++){
             SubTask task = tasks[currentTaskIndex].GetTaskList[i];
@@ -90,6 +92,6 @@ public class TaskController : MonoBehaviour
             taskText.text = task.ToString();
             taskTexts.Add(taskText);
         }
-        FPSController.Player.GoTo(tasks[currentTaskIndex].spawnPoint.position);
+        PlayerController.Player.GoTo(tasks[currentTaskIndex].spawnPoint.position);
     }
 }
