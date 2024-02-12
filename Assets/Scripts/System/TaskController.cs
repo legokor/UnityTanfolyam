@@ -51,6 +51,7 @@ public class TaskController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Application.persistentDataPath + "/session.txt");
         if (currentTaskIndex >= tasks.Count) return;
         if (tasks[currentTaskIndex].WasUpdated)
         {
@@ -66,6 +67,7 @@ public class TaskController : MonoBehaviour
             SetupCurrentTask();
             Debug.Log(Application.persistentDataPath + "/session.txt");
             string[] sessionStrings = File.ReadAllText(Application.persistentDataPath + "/session.txt").Split(";");
+            Debug.Log(Application.persistentDataPath + "/session.txt");
             sessionStrings[session] = currentTaskIndex.ToString();
             File.WriteAllText(Application.persistentDataPath + "/session.txt", string.Join(";", sessionStrings));
         }
