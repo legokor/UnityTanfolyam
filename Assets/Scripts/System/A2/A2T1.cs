@@ -12,17 +12,10 @@ public class A2T1 : Task
                 wasUpdated = true;
             }
         }
-        if (!subTasks[1].isCompleted){
-            if (player.gameObject.GetComponentInChildren<Camera>() != null){
-                subTasks[1].completedSubTaskCount++;
-                wasUpdated = true;
-            }
-        }
     }
 
     public override void SetupTask()
     {
         subTasks.Add(new SubTask("Írd meg a játékos mozgását, és próbáld ki!"));
-        subTasks.Add(new SubTask("Javítsd ki a kamerát, hogy az kövesse a játékost!"));
     }
 }

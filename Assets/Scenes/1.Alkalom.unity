@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.6325119, g: 0.8733461, b: 0.9880863, a: 1}
+  m_IndirectSpecularColor: {r: 0.6325158, g: 0.8733498, b: 0.98807794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16020,10 +16020,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 963194227}
-  walkSpeed: 6
+  playerSpeed: 6
   runSpeed: 6
-  jumpPower: 2
-  gravity: 10
+  jumpHeight: 0.25
+  gravityValue: -10
   lookSpeed: 2
   lookXLimit: 85
   canMove: 1

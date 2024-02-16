@@ -1,32 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
-[RequireComponent(typeof(CharacterController))]
-public class JatekosMozgas : PlayerController
-{
-    void Awake(){
-        if (instance == null){
-            instance = this;
-        }
-        else if (instance != this){
-            Destroy(gameObject);
-        }
-    }
- 
+public class VizsgaMozgas : PlayerController {
     void Update()
     {
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
  
-        // Ide jön a mozgás
+        // X és Y tengelyen való elmozdulás
         float curSpeedX = canMove ? walkSpeed * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? walkSpeed * Input.GetAxis("Horizontal") : 0;
         
-
-
+        
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
