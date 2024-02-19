@@ -13,12 +13,12 @@ public class Bullet : MonoBehaviour {
     public void Shoot(Transform ejection){
         projectile.transform.parent = null;
         projectile.transform.localScale = new Vector3(5,5,5);
-        projectile.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed * 0.001f, ForceMode.VelocityChange);
+        projectile.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.VelocityChange);
         
         //Drop casing in random direction
         casing.transform.parent = null;
         casing.transform.position = ejection.position;
-        casing.GetComponent<Rigidbody>().AddForce(transform.right * Random.Range(casingSpeed, 0), ForceMode.Impulse);
+        casing.GetComponent<Rigidbody>().AddForce(transform.forward * Random.Range(0, casingSpeed), ForceMode.Impulse);
         StartCoroutine(DestroyAfterCd());
 
     }

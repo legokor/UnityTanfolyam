@@ -51,7 +51,6 @@ public class TaskController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UnityEngine.Debug.Log(Application.persistentDataPath + "/session.txt");
         if (currentTaskIndex >= tasks.Count) return;
         if (tasks[currentTaskIndex].WasUpdated)
         {

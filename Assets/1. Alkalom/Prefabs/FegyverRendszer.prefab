@@ -419,7 +419,7 @@ MonoBehaviour:
   smooth: 8
   multiplier: 2
   lovedek: {fileID: 3901236579043034262, guid: 488b4f0565905aa4b905ffcf0b26e659, type: 3}
-  bulletSpawnPoint: {fileID: 1698485303512033994}
+  cso: {fileID: 1698485303512033994}
   ejection: {fileID: 8741845673966451592}
   shootCd: 0.25
 --- !u!4 &4093508908250432983 stripped
