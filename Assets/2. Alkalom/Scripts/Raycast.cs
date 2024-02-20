@@ -13,9 +13,11 @@ public class RayCaster : MonoBehaviour {
         RaycastHit hit;
         float distance = 100f;
         LayerMask reteg = LayerMask.GetMask("Labda");
-        if (Physics.Raycast(ray, out hit, distance, reteg)){
+        if (false /*Ide jön a raycast az ezt megelőző paraméterekkel*/){
             if (hit.collider.gameObject.CompareTag("Labda")){
-                hit.collider.gameObject.GetComponent<Labda>().Meglok();
+                //Ide jön a labda meglökése
+
+                //
             }
         }
     }

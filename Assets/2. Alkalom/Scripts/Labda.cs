@@ -7,14 +7,8 @@ public class Labda : MonoBehaviour
     [SerializeField] Rigidbody labdaRB;
     public void Meglok(){
         Vector3 ero = Vector3.forward * 10f;
-        //Ide kerül a meglökés, ez legyen súlytól és időtől független  
-        labdaRB.AddForce(ero, ForceMode.VelocityChange);
+        //Ide kerül a meglökés, ez legyen súlytól és időtől független
+
         //
-    }
-    
-    void Update(){
-        if (Input.GetKeyDown(KeyCode.Space)){
-            Meglok();
-        }
     }
 }

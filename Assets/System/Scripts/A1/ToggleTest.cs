@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class ToggleTest : MonoBehaviour{
+public class Faklya : MonoBehaviour{
+    [Header("Ezt kapcsold be!")]
     [SerializeField] bool bekapcsolva = false;
     public bool IsOn => bekapcsolva;
+    [Header("Particles")]
     [SerializeField] ParticleSystem fire;
     [SerializeField] ParticleSystem smoke;
 
@@ -16,4 +18,5 @@ public class ToggleTest : MonoBehaviour{
             smoke.Stop();
         }
     }
+    
 }

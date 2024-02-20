@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class A1T2 : Task
 {
-    [SerializeField] Debug debugTest;
+    [SerializeField] DebugTest debugTest;
     public override void CheckTask()
     {
         if (!subTasks[0].isCompleted) debugTest.TestStart();
     }
     public override void SetupTask()
     {
-        subTasks.Add(new SubTask("Írd ki a DebugTest osztály Start metódusában, hogy \"Hello World!\"!"));
+        subTasks.Add(new SubTask("Írd ki a DebugTest osztály Start metódusában figyelmeztetés szinten, hogy \"Hello World!\"!"));
         subTasks.Add(new SubTask("A DebugTest osztály Update metódusa írjon ki minden frameben egy számot, 1-től kezdve, 10-ig!", 10));
         Application.logMessageReceived += logMessageReceived;
     }

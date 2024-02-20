@@ -6,22 +6,23 @@ public class Fegyver : MonoBehaviour {
     [Header("Sway Settings")]
     [SerializeField]  float smooth;
     [SerializeField]  float multiplier;
-    [Header("Bullet")]
-    [SerializeField]  GameObject lovedek;
-    [SerializeField]  Transform cso;
+    [Header("Ide rakd be a lövedék Prefabot!")]
+    [SerializeField]  GameObject tolteny;
+    [Header("Parts")]
+    [SerializeField]  Transform barrel;
     [SerializeField] Transform ejection;
     [SerializeField] float shootCd;
     float shootCdTimer = 0;
 
-    public bool HasBullet => lovedek != null;
+    public bool HasBullet => tolteny != null;
 
 
     void Loves(){
-        if (lovedek == null) return;
+        if (this.tolteny == null) return;
         GameObject tolteny = null;
 
         //Itt példányosítsd a lövedéket a cso pozíciójában és elforgatásában
-        tolteny = Instantiate(lovedek, cso.position, cso.rotation);
+
         //
 
         if (tolteny == null) return;

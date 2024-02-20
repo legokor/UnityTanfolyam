@@ -5,7 +5,7 @@ using UnityEngine;
 public class A1T1 : Task
 {   
     [Header("SubTask Elements")]
-    [SerializeField] ToggleTest toggle;
+    [SerializeField] Faklya toggle;
     [SerializeField] ColliderTest colliderTest;
     [SerializeField] ColliderEnableTest colliderEnableTest;
     public override void CheckTask()
