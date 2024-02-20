@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour {
     public void Shoot(Transform ejection){
         projectile.transform.parent = null;
         projectile.transform.localScale = new Vector3(5,5,5);
-        projectile.GetComponent<Rigidbody>().AddForce(transform.right * bulletSpeed, ForceMode.VelocityChange);
+        projectile.GetComponent<Rigidbody>().AddForce(transform.right * -bulletSpeed, ForceMode.VelocityChange);
         
         //Drop casing in random direction
         casing.transform.parent = null;

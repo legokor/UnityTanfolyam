@@ -21,7 +21,6 @@ public class A1T2 : Task
             case LogType.Warning: {
                 if (logString == "Hello World!" && !subTasks[0].isCompleted) 
                 {
-                        UnityEngine.Debug.LogError("if");
                     wasUpdated = true;
                     subTasks[0].completedSubTaskCount++;
                 }

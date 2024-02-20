@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class DebugTest : MonoBehaviour {
-    int i = 0;
+    int i = 1;
 
     //Ide írd a Start függvényt, amely kiírja figyelmeztetés konzolra, hogy "Hello World!"
         
@@ -9,7 +9,7 @@ public class DebugTest : MonoBehaviour {
 
 
     //Ide írd az Update függvényt, amely kiírja információ konzolra 1-től 10-ig a számokat!
-    
+        
     //
 
 

@@ -418,8 +418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 8
   multiplier: 2
-  tolteny: {fileID: 0}
-  barrel: {fileID: 1698485303512033994}
+  ToltenyPrefab: {fileID: 0}
+  cso: {fileID: 1698485303512033994}
   ejection: {fileID: 8741845673966451592}
   shootCd: 0.25
 --- !u!4 &4093508908250432983 stripped

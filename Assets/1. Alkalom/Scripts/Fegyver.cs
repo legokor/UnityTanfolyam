@@ -7,22 +7,22 @@ public class Fegyver : MonoBehaviour {
     [SerializeField]  float smooth;
     [SerializeField]  float multiplier;
     [Header("Ide rakd be a lövedék Prefabot!")]
-    [SerializeField]  GameObject tolteny;
+    [SerializeField]  GameObject ToltenyPrefab;
     [Header("Parts")]
-    [SerializeField]  Transform barrel;
+    [SerializeField]  Transform cso;
     [SerializeField] Transform ejection;
     [SerializeField] float shootCd;
     float shootCdTimer = 0;
 
-    public bool HasBullet => tolteny != null;
+    public bool HasBullet => ToltenyPrefab != null;
 
 
     void Loves(){
-        if (this.tolteny == null) return;
+        if (this.ToltenyPrefab == null) return;
         GameObject tolteny = null;
 
-        //Itt példányosítsd a lövedéket a cso pozíciójában és elforgatásában
-
+        //Itt példányosítsd a ToltenyPrefab-ot a cso pozíciójában és elforgatásában
+        
         //
 
         if (tolteny == null) return;

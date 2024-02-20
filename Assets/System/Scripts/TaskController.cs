@@ -51,7 +51,19 @@ public class TaskController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentTaskIndex >= tasks.Count) return;
+        if (currentTaskIndex >= tasks.Count){
+            if (taskTexts.Count == 0) return;
+            foreach(TextMeshProUGUI tt in taskTexts){
+                Destroy(tt.gameObject);
+            }
+            taskTexts.Clear();
+            GameObject taskTextObject = Instantiate(TaskText);
+            taskTextObject.transform.SetParent(canvas.transform, false);
+            TextMeshProUGUI taskText = taskTextObject.GetComponent<TextMeshProUGUI>();
+            taskText.text = "Sikeresen teljesítetted az összes feladatot!";
+            taskTexts.Add(taskText);
+            return;
+        }
         if (tasks[currentTaskIndex].WasUpdated)
         {
             for (int i = 0; i < taskTexts.Count; i++){
