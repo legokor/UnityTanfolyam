@@ -20,13 +20,15 @@ public class VizsgaFegyver : MonoBehaviour {
         GameObject lovedekPeldany = null; //Ebbe kerül a lövedék példánya
 
         //Hozz létre egy példányt a lövedékből a cső pozíciójában és elforgatásában
-        lovedekPeldany = Instantiate(lovedek, cso.position, cso.rotation);
+
+        //
         
 
         if (lovedekPeldany == null) return null;
 
         //Hívd meg a lövedék Lőszer komponensének Loves() függvényét a nyilas paraméterrel
-        lovedekPeldany.GetComponent<Bullet>().Shoot(nyilas);
+
+        //
 
         
         shootCdTimer = 0;

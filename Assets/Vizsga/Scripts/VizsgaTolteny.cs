@@ -15,7 +15,7 @@ public class Lovedek : MonoBehaviour {
         Vector3 irany = transform.right * lovedekSebesseg;
 
         //Adj a lövedéknek erőt az adott irányba. A ForceMode legyen tömeg és idő független!
-        lovedek.GetComponent<Rigidbody>().AddForce(irany, ForceMode.VelocityChange);
+        
         //
 
         tolteny.transform.parent = null;

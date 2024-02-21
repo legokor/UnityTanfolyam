@@ -4,16 +4,19 @@ public class VizsgaMozgas : PlayerController {
     void Update()
     {
         #region Handles Movment
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        Vector3 elore = transform.TransformDirection(Vector3.forward);
+        Vector3 jobbra = transform.TransformDirection(Vector3.right);
  
         // X és Y tengelyen való elmozdulás
-        float curSpeedX = canMove ? walkSpeed * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? walkSpeed * Input.GetAxis("Horizontal") : 0;
+
+        
+        //
         
         
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+        float mozgasVektor = moveDirection.y;
+        //Egyesített mozgásvektor
+
+        //
 
         #endregion
  
@@ -24,15 +27,18 @@ public class VizsgaMozgas : PlayerController {
         }
         else
         {
-            moveDirection.y = movementDirectionY;
+            moveDirection.y = mozgasVektor;
         }
  
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
- 
-        characterController.Move(moveDirection * Time.deltaTime);
+
+        //Mozgás a mozgásvektorral, idő függvényében
+
+        //
+
         #endregion
  
         #region Handles Rotation
