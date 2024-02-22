@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class VizsgaMozgas : PlayerController {
+    bool tudMozogni = canMove;
     void Update()
     {
         #region Handles Movment
