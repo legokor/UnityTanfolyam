@@ -22,17 +22,17 @@ public class JatekosMozgas : PlayerController
         Vector3 jobbra = transform.TransformDirection(Vector3.right);
  
         // Ide jön a vertikális sebesség számítása
-        
+        float sebessegX = canMove ? walkSpeed * Input.GetAxis("Vertical") : 0;
         //
         //Ide jön a horizontális sebesség számítása
-        
+        float sebessegY = canMove ? walkSpeed * Input.GetAxis("Horizontal") : 0;
         //
 
 
         float movementDirectionY = moveDirection.y;
 
         //Ide jön a mozgásvektor számítása a sebességek alapján
-        
+        moveDirection = (elore * sebessegX) + (jobbra * sebessegY);
         //
 
         #endregion
