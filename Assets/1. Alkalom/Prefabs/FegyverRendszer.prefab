@@ -418,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 8
   multiplier: 2
-  ToltenyPrefab: {fileID: 0}
+  ToltenyPrefab: {fileID: 5504992120289376557, guid: dbb4aea0381470b4796d47ad1a116ba3, type: 3}
   cso: {fileID: 1698485303512033994}
   ejection: {fileID: 8741845673966451592}
   shootCd: 0.25
