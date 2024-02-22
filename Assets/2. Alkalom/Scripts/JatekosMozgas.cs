@@ -18,11 +18,11 @@ public class JatekosMozgas : PlayerController
     void Update()
     {
         #region Handles Movment
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+        Vector3 elore = transform.TransformDirection(Vector3.forward);
+        Vector3 jobbra = transform.TransformDirection(Vector3.right);
  
         // Ide jön a vertikális sebesség számítása
-
+        
         //
         //Ide jön a horizontális sebesség számítása
         
