@@ -418,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 8
   multiplier: 2
-  lovedek: {fileID: 0}
+  lovedek: {fileID: 2565653940122118991, guid: fc45e0fd3da1c4147834b510c2fee0cd, type: 3}
   cso: {fileID: 1698485303512033994}
   nyilas: {fileID: 8741845673966451592}
   shootCd: 0.25

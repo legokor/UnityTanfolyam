@@ -26,8 +26,8 @@ public class VizsgaFegyver : MonoBehaviour {
 
         if (lovedekPeldany == null) return null;
 
-        //Hívd meg a lövedék Lőszer komponensének Loves() függvényét a nyilas paraméterrel
-
+        //Hívd meg a lövedék Lőszer komponensének Loves() függvényét "nyilas" paraméterrel
+        
         //
 
         

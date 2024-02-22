@@ -14,7 +14,7 @@ public class VT3 : Task
                 wasUpdated = true;
             }
         }
-        if (subTasks[1].isCompleted){
+        if (!subTasks[1].isCompleted){
             if (weapon != null && weaponTest.TestWeapon(weapon)){
                 subTasks[1].completedSubTaskCount++;
                 wasUpdated = true;

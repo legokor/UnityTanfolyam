@@ -12,7 +12,7 @@ public class Lovedek : MonoBehaviour {
     public void Kilo(Transform ejection, bool permanentProjectile = false){
         lovedek.transform.parent = null;
         lovedek.transform.localScale = new Vector3(5,5,5);
-        Vector3 irany = transform.right * lovedekSebesseg;
+        Vector3 irany = transform.right * -1* lovedekSebesseg;
 
         //Adj a lövedéknek erőt az adott irányba. A ForceMode legyen tömeg és idő független!
         
@@ -27,6 +27,10 @@ public class Lovedek : MonoBehaviour {
 
     IEnumerator DestroyAfterCd(){
         yield return new WaitForSeconds(5);
+        DestroySelf();
+    }
+
+    public void DestroySelf(){
         Destroy(lovedek);
         Destroy(tolteny);
         Destroy(gameObject);
