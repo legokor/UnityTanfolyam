@@ -1625,11 +1625,11 @@ Transform:
   m_GameObject: {fileID: 356064188}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5489998, z: -15}
+  m_LocalPosition: {x: 0, y: 0.5489998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 961405554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &356064190
 AudioListener:
@@ -3310,6 +3310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1098539400}
+  - {fileID: 356064189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &961405555
@@ -4536,7 +4537,6 @@ GameObject:
   - component: {fileID: 1324415768}
   - component: {fileID: 1324415767}
   - component: {fileID: 1324415766}
-  - component: {fileID: 1324415765}
   m_Layer: 0
   m_Name: Plank
   m_TagString: Untagged
@@ -4559,33 +4559,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1994247748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1324415765
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324415763}
-  serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: -5, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 106
-  m_CollisionDetection: 0
 --- !u!65 &1324415766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7383,6 +7356,5 @@ SceneRoots:
   - {fileID: 1001923673}
   - {fileID: 1459988246}
   - {fileID: 961405554}
-  - {fileID: 356064189}
   - {fileID: 1283368807}
   - {fileID: 1714200989}
