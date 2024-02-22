@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class V3 : Task
+public class VT3 : Task
 {
     [SerializeField] GameObject weaponPrefab;
     VizsgaFegyver weapon;
