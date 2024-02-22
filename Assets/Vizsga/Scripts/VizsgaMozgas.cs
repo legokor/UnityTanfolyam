@@ -1,22 +1,23 @@
 using UnityEngine;
 
 public class VizsgaMozgas : PlayerController {
-    bool tudMozogni = canMove;
     void Update()
     {
+        bool tudMozogni = canMove;
+        float sebesseg = walkSpeed;
         #region Handles Movment
         Vector3 elore = transform.TransformDirection(Vector3.forward);
         Vector3 jobbra = transform.TransformDirection(Vector3.right);
  
         // X és Y tengelyen való elmozdulás
-
+        
         
         //
         
         
         float mozgasVektor = moveDirection.y;
         //Egyesített mozgásvektor
-
+        
         //
 
         #endregion
