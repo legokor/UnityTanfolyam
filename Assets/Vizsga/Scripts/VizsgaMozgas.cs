@@ -35,9 +35,7 @@ public class VizsgaMozgas : PlayerController {
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        //Mozgás a mozgásvektorral, idő függvényében
-
-        //
+        characterController.Move(moveDirection * Time.deltaTime);
 
         #endregion
  
