@@ -22,7 +22,7 @@ public class Fegyver : MonoBehaviour {
         GameObject tolteny = null;
 
         //Itt példányosítsd a ToltenyPrefab-ot a cso pozíciójában és elforgatásában
-        
+        tolteny = Instantiate(ToltenyPrefab, cso.position, cso.rotation);
         //
 
         if (tolteny == null) return;
