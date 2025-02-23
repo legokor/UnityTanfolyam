@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Player{
         get{
             if (instance == null){
-                instance = FindObjectOfType<PlayerController>();
+                instance = FindFirstObjectByType<PlayerController>();
             }
             return instance;
         }

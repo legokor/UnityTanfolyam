@@ -11,7 +11,7 @@ public class TaskController : MonoBehaviour
     public static TaskController Instance{
         get{
             if (instance == null){
-                instance = FindObjectOfType<TaskController>();
+                instance = FindFirstObjectByType<TaskController>();
             }
             return instance;
         }
