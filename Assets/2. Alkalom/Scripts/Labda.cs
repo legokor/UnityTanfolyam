@@ -8,7 +8,7 @@ public class Labda : MonoBehaviour
     public void Meglok(){
         Vector3 ero = Vector3.forward * 10f;
         //Ide kerül a meglökés, ez legyen súlytól és időtől független
-
+        labdaRB.AddForce(ero, ForceMode.VelocityChange);
         //
     }
 }
