@@ -5,10 +5,11 @@ using UnityEngine;
 public class Labda : MonoBehaviour
 {
     [SerializeField] Rigidbody labdaRB;
-    public void Meglok(){
+    public void Meglok()
+    {
         Vector3 ero = Vector3.forward * 10f;
         //Ide kerül a meglökés, ez legyen súlytól és időtől független
-
+        labdaRB.AddForce(ero, ForceMode.Impulse);
         //
     }
 }
