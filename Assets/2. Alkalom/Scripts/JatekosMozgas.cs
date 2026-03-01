@@ -6,21 +6,24 @@ using UnityEngine.TextCore.Text;
 [RequireComponent(typeof(CharacterController))]
 public class JatekosMozgas : PlayerController
 {
-    void Awake(){
-        if (instance == null){
+    void Awake()
+    {
+        if (instance == null)
+        {
             instance = this;
         }
-        else if (instance != this){
+        else if (instance != this)
+        {
             Destroy(gameObject);
         }
     }
- 
+
     void Update()
     {
         #region Handles Movment
         Vector3 elore = transform.TransformDirection(Vector3.forward);
         Vector3 jobbra = transform.TransformDirection(Vector3.right);
- 
+
         // Ide jön a vertikális sebesség számítása
         Vector3 verticalMovement = Input.GetAxis("Vertical") * elore * walkSpeed;
         //
@@ -36,7 +39,7 @@ public class JatekosMozgas : PlayerController
         //
 
         #endregion
- 
+
         #region Handles Jumping
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
@@ -46,17 +49,17 @@ public class JatekosMozgas : PlayerController
         {
             moveDirection.y = movementDirectionY;
         }
- 
+
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
- 
+
         characterController.Move(moveDirection * Time.deltaTime);
         #endregion
- 
+
         #region Handles Rotation
- 
+
         if (canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
@@ -64,8 +67,8 @@ public class JatekosMozgas : PlayerController
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
- 
+
         #endregion
- 
+
     }
 }
