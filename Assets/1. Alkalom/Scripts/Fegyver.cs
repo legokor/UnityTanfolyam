@@ -1,15 +1,16 @@
 using System;
 using UnityEngine;
 
-public class Fegyver : MonoBehaviour {
+public class Fegyver : MonoBehaviour
+{
 
     [Header("Sway Settings")]
-    [SerializeField]  float smooth;
-    [SerializeField]  float multiplier;
+    [SerializeField] float smooth;
+    [SerializeField] float multiplier;
     [Header("Ide rakd be a lövedék Prefabot!")]
-    [SerializeField]  GameObject ToltenyPrefab;
+    [SerializeField] GameObject ToltenyPrefab;
     [Header("Parts")]
-    [SerializeField]  Transform cso;
+    [SerializeField] Transform cso;
     [SerializeField] Transform ejection;
     [SerializeField] float shootCd;
     float shootCdTimer = 0;
@@ -17,17 +18,18 @@ public class Fegyver : MonoBehaviour {
     public bool HasBullet => ToltenyPrefab != null;
 
 
-    void Loves(){
+    void Loves()
+    {
         if (this.ToltenyPrefab == null) return;
         GameObject tolteny = null;
 
         //Itt példányosítsd a ToltenyPrefab-ot a cso pozíciójában és elforgatásában
-        
+        tolteny = Instantiate(ToltenyPrefab, cso.position, cso.rotation);
         //
 
         if (tolteny == null) return;
         tolteny.GetComponent<Bullet>().Shoot(ejection);
-        
+
     }
 
 
