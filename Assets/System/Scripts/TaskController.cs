@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
 
 public class TaskController : MonoBehaviour
@@ -26,6 +27,7 @@ public class TaskController : MonoBehaviour
     }
 
 
+
     [SerializeField] Canvas canvas;
     [SerializeField] GameObject TaskText;
     [SerializeField] int session;
@@ -33,6 +35,10 @@ public class TaskController : MonoBehaviour
     List<TextMeshProUGUI> taskTexts = new List<TextMeshProUGUI>();
     int currentTaskIndex;
     public Task currentTask => tasks[currentTaskIndex];
+
+    [SerializeField] private float padding = 10;
+    [SerializeField] private float taskTextOffset = 30;
+
     void Start()
     {
         if(File.Exists(Application.persistentDataPath + "/session.txt"))
@@ -99,8 +105,18 @@ public class TaskController : MonoBehaviour
         for (int i = 0; i < tasks[currentTaskIndex].GetTaskList.Count; i++){
             SubTask task = tasks[currentTaskIndex].GetTaskList[i];
             GameObject taskTextObject = Instantiate(TaskText);
-            taskTextObject.transform.SetParent(canvas.transform, false);
-            taskTextObject.transform.Translate(0, -i * 30, 0);
+
+            // Set position of task text
+            var rectt = taskTextObject.GetComponent<RectTransform>();
+            rectt.SetParent(canvas.transform, false);   // Parent to canvas
+            rectt.anchorMax = new Vector2(0, 1);        // Set position relative to upper left corner
+            rectt.anchorMin = new Vector2(0, 1);        // Set position relative to upper left corner
+            rectt.pivot = new Vector2(0, 1);            // Set the origin of the text to the upper left corner
+            rectt.anchoredPosition = Vector2.zero;      // Set the actual position to zero
+                                                        // (this will place the text in the upper left corner, because of the anchoring)
+            rectt.Translate(0, -i * taskTextOffset, 0); // Translate the text down to prevent overlapping
+            rectt.Translate(padding, -padding, 0);      // Add a bit of padding
+            
             TextMeshProUGUI taskText = taskTextObject.GetComponent<TextMeshProUGUI>();
             taskText.text = task.ToString();
             taskTexts.Add(taskText);
